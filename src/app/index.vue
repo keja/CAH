@@ -1,14 +1,12 @@
 <template>
   <div id="app" class="">
 
-    hello
+    <card class="black" context="I got 99 problems but ___________ ain't one."></card>
 
   </div>
 </template>
 
 <script>
-  // Components
-
   export default {
     name: 'app'
   };
