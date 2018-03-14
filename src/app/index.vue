@@ -1,14 +1,7 @@
 <template>
   <div id="app" class="">
 
-    <div id="status">
-      <p>Cards played</p>
-      <div class="white circle">0/1</div>
-      <div class="red circle">0/1</div>
-    </div>
-
-    <card class="black" context="I got 99 problems but ___________ ain't one."></card>
-    <card class="white" context="This game"></card>
+    <game></game>
 
   </div>
 </template>
@@ -20,7 +13,7 @@
 </script>
 
 <style lang="scss">
-
+.hidden { display: none; }
 body {
   background-color: gray;
   font-family: Helvetica, Arial, sans-serif;
