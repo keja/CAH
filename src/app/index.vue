@@ -13,7 +13,10 @@
 </script>
 
 <style lang="scss">
-.hidden { display: none; }
+  // hide the original card that are being dragged.
+.draggable-source--is-dragging {
+  opacity: 0;
+}
 body {
   background-color: gray;
   font-family: Helvetica, Arial, sans-serif;
