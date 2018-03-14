@@ -11,9 +11,10 @@
   .card {
     .context {
       .answer {
-        &:nth-of-type(1) { color: red; }
+        &:nth-of-type(1) { color: white; }
         &:nth-of-type(2) { color: green; }
         &:nth-of-type(3) { color: blue; }
+        &:nth-of-type(4) { color: red; }
       }
     }
   }
