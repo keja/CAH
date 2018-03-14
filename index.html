@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <% for (var chunk of webpack.chunks) {
+  for (var file of chunk.files) {
+  if (file.match(/\.(js|css)$/)) { %>
+  <link rel="<%= chunk.initial?'preload':'prefetch' %>" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>"><% }}} %>
+
+  <title>CAH</title>
+</head>
+<body>
+
+  <noscript>
+    todo: write something here..
+  </noscript>
+  <div id="app"></div>
+
+</body>
+</html>
