@@ -1,6 +1,12 @@
 <template>
   <div id="app" class="">
 
+    <div id="status">
+      <p>Cards played</p>
+      <div class="white circle">0/1</div>
+      <div class="red circle">0/1</div>
+    </div>
+
     <game></game>
 
   </div>
@@ -13,7 +19,7 @@
 </script>
 
 <style lang="scss">
-  // hide the original card that are being dragged.
+// hide the original card that are being dragged.
 .draggable-source--is-dragging {
   opacity: 0;
 }
