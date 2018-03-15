@@ -2,7 +2,7 @@
   <div class="card">
     <div :is="parseContext" class="context"></div>
 
-    <div class="drops">
+    <div class="drops" v-if="addDropZones">
       <div v-for="i in addDropZones" class="drop"></div>
     </div>
 
