@@ -10,6 +10,7 @@
 <script>
   import { Droppable } from '@shopify/draggable';
   import Player from './Player';
+  import Server from './Server';
 
   export default {
     data() {
@@ -18,6 +19,8 @@
       };
     },
     mounted() {
+      Server.connect();
+
       const droppable = new Droppable(this.$el, {
         draggable: '.card.white',
         droppable: '.player-deck, .drop',
