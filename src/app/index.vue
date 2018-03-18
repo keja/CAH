@@ -21,7 +21,7 @@
 <style lang="scss">
 // hide the original card that are being dragged.
 .draggable-source--is-dragging {
-  opacity: 0;
+  //opacity: 0;
 }
 body {
   background-color: gray;
