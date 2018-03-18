@@ -80,6 +80,7 @@
     position: fixed;
     bottom: 0;
     width: 100vw;
+    height: 300px;
 
     .card {
       float: left;

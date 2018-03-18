@@ -52,7 +52,9 @@
           this.$set(this.text, evt.targetIndex, card.content);
         });
         Player.$on('card:reset', (evt) => {
-          this.$set(this.text, evt.sourceIndex, '');
+          if (!this.$el.querySelector(`.drop-${evt.sourceIndex + 1}`).classList.contains('draggable-droppable--occupied')) {
+            this.$set(this.text, evt.sourceIndex, '');
+          }
         });
       }
     }
