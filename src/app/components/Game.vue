@@ -1,6 +1,6 @@
 <template>
   <div id="game">
-    <card class="black" context="I got 99 problems but ___________ ain't one."></card>
+    <card class="black" :id="this.black.id" :context="this.black.content"></card>
 
     <div class="player-deck">
       <card v-for="card in playerHand" :key="card.id" class="white" :context="card.content" :id="card.id"></card>
@@ -15,11 +15,11 @@
   export default {
     data() {
       return {
-
+        black: { id: 'not_loaded_yet', content: 'Loading..' }
       };
     },
     mounted() {
-      Server.connect();
+      Server.connect('http://localhost:3000');
 
       const droppable = new Droppable(this.$el, {
         draggable: '.card.white',
@@ -28,7 +28,6 @@
           constrainDimensions: true,
         }
       });
-
       let droppableOrigin;
       droppable.on('drag:start', (evt) => {
         droppableOrigin = evt.originalSource.parentNode.dataset.droppable;
@@ -65,7 +64,14 @@
         }
       });
 
-      Player.$on('card:played', evt => Player.playCard(evt.card));
+      // Player.$on('card:played', evt => Player.playCard(evt.card));
+      Server.on('card:black', (card) => {
+        // this.$set(this, 'black', card);
+        this.black = card;
+      });
+      Server.on('player:handChange', (hand) => {
+        Player.$data.cards.hand = hand;
+      });
     },
     computed: {
       playerHand() {
